@@ -10,7 +10,6 @@ Cuando ya el proyecto ha compilado, puede proceder a ejecutarlo, use el siguient
 java -cp target/Client-1.0-SNAPSHOT.jar edu.escuelaing.arep.Client
 ```
 
-
 ## Autor
 * **Andrés Rocha** - [andresro30](https://github.com/andresro30)
 
