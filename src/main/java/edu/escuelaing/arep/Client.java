@@ -12,7 +12,7 @@ public class Client {
     public static void main(String[] args) {
         HttpResponse<String> response = null;
         try {
-            response = Unirest.get("http://localhost:45555/result?operation=sin&number=0.5")
+            response = Unirest.get("https://client-arep-ar.herokuapp.com/result?operation=sin&number=0.5")
                     .asString();
         } catch (UnirestException e) {
             e.printStackTrace();
