@@ -1,4 +1,4 @@
-package edu.escuelaing.arep;
+package edu.escuelaing.arep.Service;
 
 import kong.unirest.*;
 import org.json.JSONObject;
@@ -10,20 +10,16 @@ import static spark.Spark.port;
 
 public class Service {
 
-    public static void main( String[] args ) {
-        port(getPort());
-        httpConection();
-    }
-
-    private static void httpConection() {
+    public static String get(String op, String num) {
         HttpResponse<String> response = null;
         try {
-            response = Unirest.get("https://fachadeserver-orlando.herokuapp.com/API/calculator?operation=sin&number=0.5")
+            response = Unirest.get("https://service-trigcalculator.herokuapp.com//calculateTrigonometric?operation="+op+"&number="+num)
                     .asString();
         } catch (UnirestException e) {
             e.printStackTrace();
         }
         System.out.println(response.getBody());
+        return response.getBody();
     }
 
     /**
@@ -35,7 +31,7 @@ public class Service {
         if (System.getenv("PORT") != null) {
             return Integer.parseInt(System.getenv("PORT"));
         }
-        return 45555;
+        return 46000;
     }
 
 }
